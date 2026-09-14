@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuel Up — Athlete Nutrition &amp; The Business of Sport</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14181A;
+    --paper:#F2F4EF;
+    --card:#FFFFFF;
+    --slate:#55606A;
+    --slate-light:#8A9199;
+    --line:#E1E4DD;
+    --cinder:#FF4B2B;
+    --cinder-dark:#D8380F;
+
+    --lax:#0E7C6B;
+    --lax-tint:#E6F3F0;
+    --fb:#8C2F39;
+    --fb-tint:#F5E9EA;
+    --bb:#1D3557;
+    --bb-tint:#E7EBF1;
+    --bk:#C9740E;
+    --bk-tint:#FBEEDD;
+
+    --carb:#FF4B2B;
+    --protein:#1D3557;
+    --fat:#C9740E;
+
+    --gold:#B8912E;
+    --gold-dark:#8F701F;
+    --gold-tint:#F6EFDD;
+    --revenue:#1D6E4C;
+    --cost:#8C2F39;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  h1,h2,h3,h4{
+    font-family:'Oswald',system-ui,sans-serif;
+    font-weight:600;
+    line-height:1.1;
+    margin:0;
+    letter-spacing:0.2px;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  img,svg{display:block;}
+  button{font-family:inherit;cursor:pointer;}
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  section{position:relative;}
+
+  :focus-visible{
+    outline:3px solid var(--cinder);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(20,24,26,0.96);
+    backdrop-filter:blur(6px);
+  }
+  .nav-inner{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+    height:64px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+  }
+  .brand-mark{
+    width:30px;height:30px;border-radius:7px;
+    background:var(--cinder);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .brand-mark svg{width:17px;height:17px;}
+  .brand-name{
+    font-family:'Oswald';
+    font-size:19px;
+    font-weight:600;
+    letter-spacing:0.3px;
+  }
+  nav.links{
+    display:flex;
+    gap:28px;
+  }
+  nav.links a{
+    color:#C7CCC6;
+    font-size:14.5px;
+    font-weight:500;
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+    white-space:nowrap;
+  }
+  nav.links a:hover{color:#fff;}
+  nav.links a.active{
+    color:#fff;
+    border-color:var(--cinder);
+  }
+  .menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    width:38px;height:38px;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+  }
+  .menu-btn svg{width:22px;height:22px;}
+
+  .mobile-drawer{
+    display:none;
+    background:#181D1F;
+    border-top:1px solid #262C2E;
+  }
+  .mobile-drawer.open{display:block;}
+  .mobile-drawer a{
+    display:block;
+    padding:15px 24px;
+    color:#D7DBD3;
+    font-size:15.5px;
+    font-weight:500;
+    border-bottom:1px solid #232929;
+  }
+  .mobile-drawer a:active{color:var(--cinder);}
+
+  @media (max-width:760px){
+    nav.links{display:none;}
+    .menu-btn{display:flex;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:#fff;
+    padding:76px 0 64px;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-120px;
+    top:-160px;
+    width:480px;height:480px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, rgba(255,75,43,0.35), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;max-width:660px;}
+  .chip{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.16);
+    color:#D7DBD3;
+    font-size:13px;
+    font-weight:500;
+    padding:6px 13px;
+    border-radius:100px;
+    margin-bottom:22px;
+  }
+  .chip .dot{width:6px;height:6px;border-radius:50%;background:var(--cinder);flex-shrink:0;}
+  .hero h1{
+    font-size:44px;
+    color:#fff;
+    margin-bottom:18px;
+  }
+  .hero p.lead{
+    font-size:17px;
+    color:#B9C0B8;
+    max-width:520px;
+    margin-bottom:32px;
+  }
+  .hero-ctas{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 22px;
+    border-radius:8px;
+    font-size:14.5px;
+    font-weight:600;
+    border:1px solid transparent;
+    transition:transform .12s ease, background .15s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{background:var(--cinder);color:#fff;}
+  .btn-primary:hover{background:var(--cinder-dark);}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);}
+  .btn-ghost:hover{border-color:#fff;}
+
+  .hero-stats{
+    display:flex;
+    gap:34px;
+    flex-wrap:wrap;
+    padding-top:28px;
+    border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .hero-stat b{
+    display:block;
+    font-family:'Oswald';
+    font-size:26px;
+    color:#fff;
+  }
+  .hero-stat span{
+    font-size:12.5px;
+    color:#9BA39A;
+  }
+
+  @media (max-width:600px){
+    .hero{padding:52px 0 44px;}
+    .hero h1{font-size:32px;}
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{padding:64px 0;}
+  .section-head{
+    max-width:600px;
+    margin-bottom:36px;
+  }
+  .section-head h2{
+    font-size:30px;
+    color:var(--ink);
+    margin-bottom:12px;
+  }
+  .section-head p{
+    color:var(--slate);
+    font-size:15.5px;
+  }
+  .section-alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+  @media (max-width:600px){
+    .section{padding:44px 0;}
+    .section-head h2{font-size:25px;}
+  }
+
+  /* ---------- BASICS: in-season / off-season ---------- */
+  .split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .split-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:26px 24px;
+  }
+  .split-card.on{border-top:4px solid var(--cinder);}
+  .split-card.off{border-top:4px solid var(--bb);}
+  .split-card h3{font-size:20px;margin-bottom:4px;}
+  .split-card .goal{
+    font-size:13px;
+    color:var(--slate-light);
+    margin-bottom:16px;
+    display:block;
+  }
+  .split-card li{
+    display:flex;
+    gap:10px;
+    font-size:14.5px;
+    color:var(--slate);
+    padding:9px 0;
+    border-top:1px solid var(--line);
+  }
+  .split-card li:first-of-type{border-top:none;}
+  .split-card li svg{flex-shrink:0;margin-top:3px;width:15px;height:15px;}
+  .split-card.on li svg{color:var(--cinder);}
+  .split-card.off li svg{color:var(--bb);}
+
+  @media (max-width:700px){
+    .split{grid-template-columns:1fr;}
+  }
+
+  /* ---------- SPORT TABS ---------- */
+  .tabbar{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding-bottom:4px;
+    margin-bottom:28px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    background:var(--card);
+    border:1.5px solid var(--line);
+    padding:10px 18px;
+    border-radius:100px;
+    font-size:14.5px;
+    font-weight:600;
+    color:var(--slate);
+    white-space:nowrap;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-shrink:0;
+    transition:all .15s ease;
+  }
+  .tab-btn .swatch{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+  .tab-btn[aria-selected="true"]{
+    color:#fff;
+    border-color:transparent;
+  }
+  .tab-btn[data-sport="lax"][aria-selected="true"]{background:var(--lax);}
+  .tab-btn[data-sport="fb"][aria-selected="true"]{background:var(--fb);}
+  .tab-btn[data-sport="bb"][aria-selected="true"]{background:var(--bb);}
+  .tab-btn[data-sport="bk"][aria-selected="true"]{background:var(--bk);}
+  .tab-btn[aria-selected="true"] .swatch{background:#fff;}
+
+  .sport-panel{display:none;}
+  .sport-panel.active{display:block;animation:fadein .25s ease;}
+  @keyframes fadein{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+
+  .sport-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .sport-card-head{
+    padding:22px 26px;
+    color:#fff;
+  }
+  .sport-card-head h3{font-size:24px;color:#fff;}
+  .sport-card-head p{font-size:13.5px;color:rgba(255,255,255,0.85);margin-top:4px;}
+
+  .sport-card-body{
+    padding:26px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px 32px;
+  }
+  @media (max-width:700px){
+    .sport-card-body{grid-template-columns:1fr;padding:22px 20px;}
+  }
+
+  .qa-block{grid-column:span 1;}
+  .qa-block h4{
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--slate-light);
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    margin-bottom:8px;
+  }
+  blockquote{
+    font-size:15px;
+    color:var(--ink);
+    margin:0 0 6px;
+    padding-left:14px;
+    border-left:3px solid var(--line);
+  }
+  .qa-block .note{font-size:13px;color:var(--slate-light);}
+
+  .macro-block{grid-column:1 / -1;}
+  .macro-bar{
+    display:flex;
+    height:34px;
+    border-radius:8px;
+    overflow:hidden;
+    margin:10px 0 10px;
+  }
+  .macro-bar span{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:700;
+    color:#fff;
+  }
+  .macro-legend{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:var(--slate);
+  }
+  .macro-legend b{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-weight:500;
+  }
+  .macro-legend i{width:10px;height:10px;border-radius:3px;display:inline-block;}
+
+  /* ---------- COMPARE ---------- */
+  .compare-wrap{
+    background:var(--ink);
+    color:#fff;
+    border-radius:16px;
+    padding:36px 30px;
+  }
+  .compare-teams{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .compare-team{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Oswald';
+    font-size:19px;
+  }
+  .compare-team i{width:12px;height:12px;border-radius:50%;}
+  .vs{color:var(--slate-light);font-size:13px;font-family:'Inter';}
+
+  .compare-rows{margin-top:22px;}
+  .compare-row{
+    padding:20px 0;
+    border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .compare-row .metric{
+    font-size:13px;
+    color:#9BA39A;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    margin-bottom:10px;
+    font-weight:600;
+  }
+  .compare-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  .compare-cell{font-size:14.5px;color:#D7DBD3;}
+  .compare-cell b{display:block;color:#fff;font-size:15.5px;margin-bottom:4px;font-family:'Oswald';font-weight:500;}
+  @media (max-width:600px){
+    .compare-grid{grid-template-columns:1fr;gap:14px;}
+  }
+
+  .compare-summary{
+    margin-top:24px;
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,0.12);
+    font-size:14.5px;
+    color:#D7DBD3;
+  }
+  .compare-summary b{color:#fff;font-family:'Oswald';font-weight:500;font-size:15.5px;display:block;margin-bottom:8px;}
+
+  /* ---------- MEAL PLAN TIMELINE ---------- */
+  .timeline{position:relative;padding-left:2px;}
+  .t-item{
+    display:grid;
+    grid-template-columns:44px 1fr;
+    gap:18px;
+  }
+  .t-rail{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .t-num{
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--fb);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Oswald';
+    font-size:16px;
+    flex-shrink:0;
+  }
+  .t-line{
+    flex:1;
+    width:2px;
+    background:var(--line);
+    margin:4px 0;
+  }
+  .t-item:last-child .t-line{display:none;}
+  .t-body{padding-bottom:34px;}
+  .t-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+    cursor:pointer;
+  }
+  .t-head h3{font-size:19px;}
+  .t-when{font-size:12.5px;color:var(--slate-light);font-weight:500;}
+  .t-foods{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:12px;
+  }
+  .t-foods span{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:6px 12px;
+    border-radius:100px;
+    font-size:13px;
+    color:var(--ink);
+  }
+  .t-why{
+    margin-top:14px;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .t-why.open{max-height:400px;}
+  .t-why-inner{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+  }
+  .t-why-inner p{font-size:14px;color:var(--slate);padding:5px 0;}
+  .t-toggle{
+    font-size:13px;
+    font-weight:600;
+    color:var(--fb);
+    display:flex;
+    align-items:center;
+    gap:5px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .t-toggle svg{width:13px;height:13px;transition:transform .2s ease;}
+  .t-toggle.open svg{transform:rotate(180deg);}
+
+  /* ---------- RULES / callouts ---------- */
+  .rules-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+  }
+  .rule-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px 20px;
+  }
+  .rule-card .icon{
+    width:36px;height:36px;
+    border-radius:9px;
+    background:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+    color:var(--cinder);
+  }
+  .rule-card .icon svg{width:19px;height:19px;}
+  .rule-card h4{font-size:15.5px;margin-bottom:6px;}
+  .rule-card p{font-size:13.5px;color:var(--slate);}
+  @media (max-width:850px){
+    .rules-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:520px){
+    .rules-grid{grid-template-columns:1fr;}
+  }
+
+  .avoid-strip{
+    margin-top:20px;
+    background:var(--fb-tint);
+    border:1px solid #E3C7CA;
+    border-radius:12px;
+    padding:18px 22px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .avoid-strip svg{width:20px;height:20px;color:var(--fb);flex-shrink:0;margin-top:2px;}
+  .avoid-strip p{font-size:14px;color:#5C232B;}
+  .avoid-strip b{color:var(--fb);}
+
+  /* ---------- NEXT STEPS ---------- */
+  .checklist{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:8px;
+  }
+  .check-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    padding:18px;
+    border-bottom:1px solid var(--line);
+  }
+  .check-item:last-child{border-bottom:none;}
+  .check-item .num{
+    width:26px;height:26px;
+    border-radius:7px;
+    background:var(--ink);
+    color:#fff;
+    font-family:'Oswald';
+    font-size:13px;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    margin-top:1px;
+  }
+  .check-item h4{font-size:15.5px;margin-bottom:3px;}
+  .check-item p{font-size:13.5px;color:var(--slate);}
+
+  .closing{
+    max-width:640px;
+    margin-top:34px;
+    font-size:15.5px;
+    color:var(--slate);
+  }
+
+  /* ---------- disclaimer callout ---------- */
+  .note-box{
+    display:flex;
+    gap:14px;
+    background:#FBEEDD;
+    border:1px solid #EFD4A8;
+    border-radius:12px;
+    padding:16px 20px;
+    margin-top:28px;
+    align-items:flex-start;
+  }
+  .note-box svg{width:19px;height:19px;color:var(--bk);flex-shrink:0;margin-top:2px;}
+  .note-box p{font-size:13.5px;color:#5C4116;}
+  .note-box b{color:#5C4116;}
+
+  /* ---------- SOURCING / CREDIBILITY STRIP ---------- */
+  .source-strip{
+    padding:36px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .source-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:36px;
+    align-items:start;
+  }
+  .source-grid h3{font-size:19px;margin-bottom:10px;}
+  .source-grid p{font-size:14.5px;color:var(--slate);}
+  .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:8px 14px;
+    border-radius:100px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .badge svg{width:13px;height:13px;color:var(--cinder);}
+  .method-note{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:3px solid var(--cinder);
+    border-radius:0 10px 10px 0;
+    padding:16px 18px;
+  }
+  .method-note p{font-size:13.5px;color:var(--slate);}
+  .method-note p + p{margin-top:8px;}
+  .q-list{margin-top:20px;}
+  .q-list-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+  .q-list ol{padding-left:20px;font-size:14px;color:var(--slate);line-height:1.6;}
+  .q-list ol li{margin-bottom:3px;}
+  .doc-links{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
+  .doc-link{
+    display:flex;gap:12px;align-items:flex-start;
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:12px 14px;text-decoration:none;color:var(--ink);
+  }
+  .doc-link:hover{border-color:var(--cinder);}
+  .doc-link:focus-visible{outline:2px solid var(--cinder);outline-offset:2px;}
+  .doc-link svg{width:20px;height:20px;color:var(--cinder);flex-shrink:0;margin-top:2px;}
+  .doc-link b{display:block;font-size:14px;}
+  .doc-link small{display:block;font-size:12.5px;color:var(--slate);margin-top:2px;line-height:1.45;}
+  .me-card{
+    margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 18px;
+  }
+  .me-card-title{font-size:13px;font-weight:700;margin-bottom:10px;}
+  .me-card dl{font-size:13.5px;}
+  .me-card dt{font-weight:600;color:var(--ink);margin-top:8px;}
+  .me-card dt:first-child{margin-top:0;}
+  .me-card dd{color:var(--slate);margin:1px 0 0;}
+  .sources-list{margin-top:22px;border-top:1px solid var(--line);padding-top:16px;}
+  .sources-list h4{font-size:14px;margin-bottom:8px;}
+  .sources-list ul{padding-left:18px;font-size:13.5px;color:var(--slate);line-height:1.65;}
+  .sources-list a{color:var(--ink);}
+  .log{max-width:720px;}
+  .log-item{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);}
+  .log-item:last-child{border-bottom:none;}
+  .log-when{font-weight:700;font-size:14px;color:var(--ink);}
+  .log-what{font-size:14.5px;color:var(--slate);line-height:1.6;}
+  @media (max-width:560px){
+    .log-item{grid-template-columns:1fr;gap:4px;}
+  }
+  @media (max-width:750px){
+    .source-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- perspective labels inside sport cards ---------- */
+  .tag-row{display:flex;gap:6px;margin-bottom:9px;flex-wrap:wrap;}
+  .ptag{
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:0.4px;
+    padding:3px 9px;
+    border-radius:5px;
+    display:inline-block;
+  }
+  .ptag.perspective{background:#EDEEEA;color:var(--slate);}
+  .ptag.shows{background:var(--gold-tint);color:var(--gold-dark);}
+  .shows-line{font-size:13.5px;color:var(--slate);margin-top:8px;padding-left:14px;border-left:3px solid var(--gold);}
+
+  .connection-block{
+    grid-column:1 / -1;
+    background:var(--paper);
+    border:1px dashed var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+    display:flex;
+    gap:12px;
+  }
+  .connection-block svg{width:17px;height:17px;color:var(--cinder);flex-shrink:0;margin-top:2px;}
+  .connection-block .ptag{background:var(--fb-tint);color:var(--fb);margin-bottom:6px;}
+  .connection-block p{font-size:13.5px;color:var(--ink);}
+
+  /* ---------- OLYMPICS / ECONOMICS SECTION ---------- */
+  .divider-band{
+    background:var(--ink);
+    padding:54px 0 40px;
+    color:#fff;
+    text-align:center;
+  }
+  .divider-band .tiny{
+    font-size:12.5px;
+    color:#9BA39A;
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  .divider-band h2{
+    font-size:28px;
+    color:#fff;
+    max-width:640px;
+    margin:0 auto 14px;
+  }
+  .divider-band p{
+    font-size:15px;
+    color:#B9C0B8;
+    max-width:560px;
+    margin:0 auto;
+  }
+  .scale-row{
+    display:flex;
+    justify-content:center;
+    gap:0;
+    margin-top:28px;
+    max-width:420px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .scale-item{flex:1;padding:0 16px;}
+  .scale-item b{display:block;font-family:'Oswald';font-size:15px;color:#fff;margin-bottom:2px;}
+  .scale-item span{font-size:12px;color:#9BA39A;}
+  .scale-arrow{color:var(--gold);font-size:20px;display:flex;align-items:center;}
+
+  .econ-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-bottom:36px;
+  }
+  .econ-stat{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px 18px;
+    text-align:left;
+  }
+  .econ-stat b{
+    display:block;
+    font-family:'Oswald';
+    font-size:26px;
+    color:var(--gold-dark);
+    margin-bottom:4px;
+  }
+  .econ-stat span{font-size:12.5px;color:var(--slate);}
+  @media (max-width:750px){.econ-stats{grid-template-columns:1fr 1fr;}}
+
+  .cost-split .split-card.rev{border-top:4px solid var(--revenue);}
+  .cost-split .split-card.cost{border-top:4px solid var(--cost);}
+  .cost-split .split-card.rev li svg{color:var(--revenue);}
+  .cost-split .split-card.cost li svg{color:var(--cost);}
+
+  .case-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:18px;
+  }
+  @media (max-width:850px){.case-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.case-grid{grid-template-columns:1fr;}}
+  .case-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px;
+  }
+  .case-card .outcome{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.3px;
+    padding:3px 10px;
+    border-radius:100px;
+    margin-bottom:12px;
+  }
+  .case-card .outcome.profit{background:#E3F1E9;color:var(--revenue);}
+  .case-card .outcome.over{background:var(--fb-tint);color:var(--cost);}
+  .case-card .outcome.mixed{background:var(--gold-tint);color:var(--gold-dark);}
+  .case-card h4{font-size:17px;margin-bottom:8px;}
+  .case-card p{font-size:13.5px;color:var(--slate);}
+
+  .revenue-compare{margin-top:36px;}
+  .rc-city{margin-bottom:22px;}
+  .rc-label{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:8px;}
+  .rc-bars{display:flex;flex-direction:column;gap:6px;}
+  .rc-bar-row{display:flex;align-items:center;gap:10px;}
+  .rc-bar-row .rc-name{width:64px;font-size:12px;color:var(--slate);flex-shrink:0;}
+  .rc-bar-track{flex:1;background:var(--line);border-radius:6px;height:22px;overflow:hidden;}
+  .rc-bar-fill{height:100%;display:flex;align-items:center;padding-left:10px;color:#fff;font-size:11.5px;font-weight:700;border-radius:6px;}
+
+  .reform-callout{
+    margin-top:30px;
+    background:var(--gold-tint);
+    border:1px solid #E4D6A8;
+    border-radius:12px;
+    padding:20px 22px;
+    display:flex;
+    gap:14px;
+  }
+  .reform-callout svg{width:20px;height:20px;color:var(--gold-dark);flex-shrink:0;margin-top:2px;}
+  .reform-callout p{font-size:14px;color:#5C4B15;}
+  .reform-callout b{color:#4A3B10;}
+
+  .learned-box{
+    margin-top:34px;
+    background:var(--ink);
+    color:#fff;
+    border-radius:14px;
+    padding:30px 28px;
+  }
+  .learned-box .tiny{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:0.4px;margin-bottom:10px;}
+  .learned-box p{font-size:15px;color:#D7DBD3;max-width:660px;}
+  .learned-box p + p{margin-top:12px;}
+  .learned-box .author{
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px solid rgba(255,255,255,0.15);
+    font-size:13px;
+    color:#9BA39A;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:#9BA39A;
+    padding:40px 0;
+    font-size:13px;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  footer .foot-brand{
+    display:flex;align-items:center;gap:9px;
+    color:#fff;font-family:'Oswald';font-size:15px;
+  }
+  footer .foot-brand .brand-mark{width:22px;height:22px;}
+  footer .foot-brand .brand-mark svg{width:13px;height:13px;}
+  footer p{max-width:420px;}
+
+  /* jump link offset for sticky header */
+  section[id], .divider-band[id]{scroll-margin-top:76px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z" fill="#fff"/></svg></span>
+      <span class="brand-name">Fuel Up</span>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#basics">Basics</a>
+      <a href="#sports">By Sport</a>
+      <a href="#compare">Compare</a>
+      <a href="#mealplan">Meal Plan</a>
+      <a href="#rules">Golden Rules</a>
+      <a href="#next">Next Steps</a>
+      <a href="#business-of-sport">Business of Sport</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#basics">Basics</a>
+    <a href="#sports">By Sport</a>
+    <a href="#compare">Compare</a>
+    <a href="#mealplan">Meal Plan</a>
+    <a href="#rules">Golden Rules</a>
+    <a href="#next">Next Steps</a>
+    <a href="#business-of-sport">Business of Sport</a>
+    <a href="#sources">Sources</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <span class="chip"><span class="dot"></span>A research project by Will Bednar, Hun School Class of 2027</span>
+    <h1>Nutrition that matches how you play.</h1>
+    <p class="lead">What high school lacrosse, football, baseball, and basketball players actually eat on game day — what they avoid, how their macros differ, and how eating changes between seasons.</p>
+    <div class="hero-ctas">
+      <a href="#sports" class="btn btn-primary">Find your sport</a>
+      <a href="#mealplan" class="btn btn-ghost">See a full meal plan</a>
+      <a href="#sources" class="btn btn-ghost">Read the original research</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><b>4</b><span>Sports covered</span></div>
+      <div class="hero-stat"><b>4</b><span>Game-day meals</span></div>
+      <div class="hero-stat"><b>5</b><span>Questions asked of every athlete</span></div>
+    </div>
+    <p style="margin-top:26px;font-size:13.5px;color:#9BA39A;">This project also zooms out to the economics of hosting the Olympics. <a href="#business-of-sport" style="color:#fff;font-weight:600;border-bottom:1px solid var(--gold);">See The Business of Sport ↓</a></p>
+  </div>
+</section>
+
+<!-- ================= SOURCING / CREDIBILITY ================= -->
+<section class="source-strip" id="sources">
+  <div class="wrap">
+    <div class="source-grid">
+      <div>
+        <h3>Where this comes from</h3>
+        <p>I started this during football season of my junior year. A health issue forced me to rethink almost every meal while I was still training 20+ hours a week, and once I started paying attention I realized most of my teammates were getting their nutrition advice from social media and supplement ads. So I went and asked athletes directly.</p>
+        <p style="margin-top:10px;">I asked the same five questions to a varsity lacrosse, football, baseball, and basketball player, recorded the conversations, and transcribed them. Then I took what they said to a registered dietitian at Hunterdon Medical Center and to Hun's athletic trainers to check it against actual evidence. Everything on this page traces back to those notes.</p>
+
+        <div class="q-list">
+          <div class="q-list-title">The five questions I asked every athlete</div>
+          <ol>
+            <li>What's your game-day meal, and why?</li>
+            <li>What foods do you stay away from, and why?</li>
+            <li>What macros do you aim for?</li>
+            <li>Where do you learn nutrition information from?</li>
+            <li>How does your eating change in season vs. out of season?</li>
+          </ol>
+        </div>
+
+        <div class="doc-links">
+          <!-- TODO (Rishi/Aaron): replace the three hrefs below with the real Google Doc links. Make sure sharing is set to "Anyone with the link can view". -->
+          <a class="doc-link" href="REPLACE_WITH_GOOGLE_DOC_LINK_RESEARCH" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9l-6-6z"/><path d="M14 3v6h6M8 13h8M8 17h8"/></svg>
+            <span><b>Original research write-up</b><small>Google Doc. Intro, interview findings, football vs. lacrosse comparison, meal plan, recommendations.</small></span>
+          </a>
+          <a class="doc-link" href="REPLACE_WITH_GOOGLE_DOC_LINK_INTERVIEWS" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a3 3 0 00-3 3v6a3 3 0 006 0V6a3 3 0 00-3-3z"/><path d="M19 11a7 7 0 01-14 0M12 18v3"/></svg>
+            <span><b>Interview questions and transcribed answers</b><small>Raw notes from the four athlete interviews, in the athletes' own words.</small></span>
+          </a>
+          <a class="doc-link" href="REPLACE_WITH_GOOGLE_DOC_LINK_OLYMPICS" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16M6 16V9M10 16V5M14 16v-6M18 16V7"/></svg>
+            <span><b>Olympics economics paper</b><small>The Hun School Honors Program research behind Part Two of this site.</small></span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="method-note">
+          <p><b>How to read this site:</b> Quotes labeled "Athlete Perspective" are exactly what the athlete said in the interview.</p>
+          <p>"What This Shows" and "Performance Connection" notes are my own analysis, not additional claims from the athlete.</p>
+          <p>None of this is medical or nutritional advice. It's what four athletes actually do, examined in context.</p>
+        </div>
+        <div class="me-card">
+          <div class="me-card-title">My own answers, for what it's worth</div>
+          <dl>
+            <dt>Game-day meal</dt><dd>Pasta, chicken, clean meals. Nothing fancy.</dd>
+            <dt>Foods I stay away from</dt><dd>Added sugars and seed oils.</dd>
+            <dt>Macro target</dt><dd>Around 200g of protein a day.</dd>
+            <dt>Where I learn from</dt><dd>A registered dietitian at Hunterdon Medical Center, our athletic trainers, and reading the actual research instead of the ads.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BASICS ================= -->
+<section class="section" id="basics">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Your eating changes with your season</h2>
+      <p>Across every sport, athletes described eating differently depending on whether they were competing or training. Here's the pattern that showed up again and again.</p>
+    </div>
+    <div class="split">
+      <div class="split-card on">
+        <h3>In Season</h3>
+        <span class="goal">Goal: performance</span>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>More total calories, especially carbs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Heavy focus on recovery and hydration</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Eating for consistency — fuel to train, compete, and recover on repeat</li>
+        </ul>
+      </div>
+      <div class="split-card off">
+        <h3>Off Season</h3>
+        <span class="goal">Goal: body composition & strength</span>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Eating cleaner and more intentionally</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Carbs dialed back slightly, protein goes up</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Focused on strength gains and long-term development, not game-day output</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BY SPORT ================= -->
+<section class="section section-alt" id="sports">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What athletes in your sport actually eat</h2>
+      <p>These answers come straight from my interviews with a varsity lacrosse, football, baseball, and basketball player. Tap a sport to see their game-day meal, what they avoid, and their macro targets.</p>
+    </div>
+
+    <div class="tabbar" role="tablist" id="tabbar">
+      <button class="tab-btn" data-sport="lax" role="tab" aria-selected="true"><span class="swatch" style="background:var(--lax)"></span>Lacrosse</button>
+      <button class="tab-btn" data-sport="fb" role="tab" aria-selected="false"><span class="swatch" style="background:var(--fb)"></span>Football</button>
+      <button class="tab-btn" data-sport="bb" role="tab" aria-selected="false"><span class="swatch" style="background:var(--bb)"></span>Baseball</button>
+      <button class="tab-btn" data-sport="bk" role="tab" aria-selected="false"><span class="swatch" style="background:var(--bk)"></span>Basketball</button>
+    </div>
+
+    <!-- LACROSSE -->
+    <div class="sport-panel active" data-panel="lax">
+      <div class="sport-card">
+        <div class="sport-card-head" style="background:var(--lax);">
+          <h3>Lacrosse</h3>
+          <p>Constant running, minimal rest — carbs lead the plate.</p>
+        </div>
+        <div class="sport-card-body">
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Game-day meal</h4>
+            <blockquote>"On game day I usually eat a carb-heavy but clean meal like chicken, rice, or pasta and fruit. Lacrosse is nonstop with a lot of sprinting, so fast and slow carbs for energy without feeling heavy."</blockquote>
+            <div class="tag-row" style="margin-top:10px;"><span class="ptag shows">What This Shows</span></div>
+            <p class="shows-line">Sports with constant running and little rest push athletes toward carbohydrate-heavy meals to keep energy steady.</p>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Foods to avoid</h4>
+            <blockquote>"I avoid greasy or fried foods, super sugary snacks, and anything new. Those mess with digestion and energy levels, especially in a fast-paced game."</blockquote>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Learns nutrition from</h4>
+            <p class="note">Team nutritionist, strength coach, and years of trial and error.</p>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>In season vs. off season</h4>
+            <p class="note">In season: more carbs, focus on recovery. Off season: fewer carbs, more focus on protein and body composition.</p>
+          </div>
+          <div class="macro-block">
+            <h4>Macro targets</h4>
+            <div class="macro-bar">
+              <span style="width:50%;background:var(--carb);">Carbs 50%</span><span style="width:27.5%;background:var(--protein);">Protein 25–30%</span><span style="width:22.5%;background:var(--fat);">Fat ~rest</span>
+            </div>
+            <div class="macro-legend">
+              <b><i style="background:var(--carb)"></i>Carbs — higher during season, for sustained energy</b>
+              <b><i style="background:var(--protein)"></i>Protein — moderate, to maintain muscle</b>
+              <b><i style="background:var(--fat)"></i>Fat — kept lower around games</b>
+            </div>
+          </div>
+          <div class="connection-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7v8l10-12h-7V2z"/></svg>
+            <div>
+              <span class="ptag">Performance Connection</span>
+              <p>Endurance sports with lots of transitions rely on both aerobic and anaerobic energy systems — which is why carbohydrates take priority over protein or fat on game day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTBALL -->
+    <div class="sport-panel" data-panel="fb">
+      <div class="sport-card">
+        <div class="sport-card-head" style="background:var(--fb);">
+          <h3>Football</h3>
+          <p>Explosive, physical, contact-heavy — protein does the heavy lifting.</p>
+        </div>
+        <div class="sport-card-body">
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Game-day meal</h4>
+            <blockquote>"I eat a big, balanced meal — something like steak or chicken, rice or potatoes, and vegetables. Football is explosive and physical, so I need fuel that lasts and helps with strength and power."</blockquote>
+            <div class="tag-row" style="margin-top:10px;"><span class="ptag shows">What This Shows</span></div>
+            <p class="shows-line">Sports built around short, explosive, high-contact effort push athletes toward bigger, more balanced meals rather than light carb-focused ones.</p>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Foods to avoid</h4>
+            <blockquote>"I stay away from junk food, excessive sugar, and heavy fried foods. They slow me down and affect my recovery."</blockquote>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Learns nutrition from</h4>
+            <p class="note">Team dietitians, strength staff, and older players who've had success.</p>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>In season vs. off season</h4>
+            <p class="note">In season: more calories overall, recovery is the priority. Off season: more disciplined, cleaner eating, focused on building muscle or leaning out.</p>
+          </div>
+          <div class="macro-block">
+            <h4>Macro targets</h4>
+            <div class="macro-bar">
+              <span style="width:40%;background:var(--carb);">Carbs 40%</span><span style="width:32.5%;background:var(--protein);">Protein 30–35%</span><span style="width:27.5%;background:var(--fat);">Fat ~rest</span>
+            </div>
+            <div class="macro-legend">
+              <b><i style="background:var(--carb)"></i>Carbs — moderate to high, depending on position</b>
+              <b><i style="background:var(--protein)"></i>Protein — high, year-round</b>
+              <b><i style="background:var(--fat)"></i>Fat — healthy fats, rounding out the plate</b>
+            </div>
+          </div>
+          <div class="connection-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7v8l10-12h-7V2z"/></svg>
+            <div>
+              <span class="ptag">Performance Connection</span>
+              <p>Contact-heavy sports create more muscle breakdown from collisions and sprinting, which is why protein takes priority for repair and recovery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BASEBALL -->
+    <div class="sport-panel" data-panel="bb">
+      <div class="sport-card">
+        <div class="sport-card-head" style="background:var(--bb);">
+          <h3>Baseball</h3>
+          <p>Long games, sharp focus needed — lighter meals win.</p>
+        </div>
+        <div class="sport-card-body">
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Game-day meal</h4>
+            <blockquote>"I go lighter — usually chicken or fish, rice, and fruit. Baseball requires focus and reaction time, so I don't want to feel sluggish or bloated."</blockquote>
+            <div class="tag-row" style="margin-top:10px;"><span class="ptag shows">What This Shows</span></div>
+            <p class="shows-line">In a sport built around sharp reaction time over long games, feeling light matters as much as feeling fueled.</p>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Foods to avoid</h4>
+            <blockquote>"I avoid heavy dairy, greasy foods, and anything that causes bloating. Long games mean digestion really matters."</blockquote>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Learns nutrition from</h4>
+            <p class="note">Team staff, pro players, and experimenting during the season to see what helps performance.</p>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>In season vs. off season</h4>
+            <p class="note">In season: eating consistently, focused on maintenance. Off season: eating more to build strength and muscle.</p>
+          </div>
+          <div class="macro-block">
+            <h4>Macro targets</h4>
+            <div class="macro-bar">
+              <span style="width:45%;background:var(--carb);">Carbs 45%</span><span style="width:30%;background:var(--protein);">Protein 30%</span><span style="width:25%;background:var(--fat);">Fat 25%</span>
+            </div>
+            <div class="macro-legend">
+              <b><i style="background:var(--carb)"></i>Carbs — moderate</b>
+              <b><i style="background:var(--protein)"></i>Protein — high</b>
+              <b><i style="background:var(--fat)"></i>Fat — controlled</b>
+            </div>
+          </div>
+          <div class="connection-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7v8l10-12h-7V2z"/></svg>
+            <div>
+              <span class="ptag">Performance Connection</span>
+              <p>Long games with high focus demands reward digestion-friendly meals — bloating or sluggishness is a bigger risk to performance than being slightly under-fueled.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BASKETBALL -->
+    <div class="sport-panel" data-panel="bk">
+      <div class="sport-card">
+        <div class="sport-card-head" style="background:var(--bk);">
+          <h3>Basketball</h3>
+          <p>Constant movement, end to end — carbs keep the engine running.</p>
+        </div>
+        <div class="sport-card-body">
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Game-day meal</h4>
+            <blockquote>"I eat easily digestible carbs like pasta, rice, and fruit with lean protein. Basketball is constant movement, so carbs are key for energy and endurance."</blockquote>
+            <div class="tag-row" style="margin-top:10px;"><span class="ptag shows">What This Shows</span></div>
+            <p class="shows-line">Nonstop, end-to-end movement demands a steady carbohydrate supply, similar to lacrosse's endurance-driven approach.</p>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Foods to avoid</h4>
+            <blockquote>"I avoid fast food, heavy fats, and too much sugar before games because it causes energy crashes."</blockquote>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>Learns nutrition from</h4>
+            <p class="note">Team nutritionist, strength staff, and research from credible sports performance sources.</p>
+          </div>
+          <div class="qa-block">
+            <div class="tag-row"><span class="ptag perspective">Athlete Perspective</span></div>
+            <h4>In season vs. off season</h4>
+            <p class="note">In season: more carbs, recovery and hydration are the priority. Off season: cleaner eating, heavier lifting, more body-focused.</p>
+          </div>
+          <div class="macro-block">
+            <h4>Macro targets</h4>
+            <div class="macro-bar">
+              <span style="width:55%;background:var(--carb);">Carbs 55%</span><span style="width:25%;background:var(--protein);">Protein 25%</span><span style="width:20%;background:var(--fat);">Fat 20%</span>
+            </div>
+            <div class="macro-legend">
+              <b><i style="background:var(--carb)"></i>Carbs — high</b>
+              <b><i style="background:var(--protein)"></i>Protein — moderate</b>
+              <b><i style="background:var(--fat)"></i>Fat — lower around games</b>
+            </div>
+          </div>
+          <div class="connection-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7v8l10-12h-7V2z"/></svg>
+            <div>
+              <span class="ptag">Performance Connection</span>
+              <p>Sports played end-to-end with little stoppage lean on carbohydrates for sustained energy — the same pattern seen in lacrosse.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= COMPARE ================= -->
+<section class="section" id="compare">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Football vs. lacrosse: same goal, different fuel</h2>
+      <p>Two contact sports, two very different game structures — which means two different nutrition strategies.</p>
+    </div>
+    <div class="compare-wrap">
+      <div class="compare-teams">
+        <div class="compare-team"><i style="background:var(--fb)"></i>Football</div>
+        <span class="vs">VS</span>
+        <div class="compare-team"><i style="background:var(--lax)"></i>Lacrosse</div>
+      </div>
+      <div class="compare-rows">
+        <div class="compare-row">
+          <div class="metric">Needs more carbohydrates</div>
+          <div class="compare-grid">
+            <div class="compare-cell"><b>Football</b>Lower relative need — shorter, more explosive plays.</div>
+            <div class="compare-cell"><b>Lacrosse ✓</b>More running, more transitions, less rest. Relies on both aerobic and anaerobic energy systems, so carbs are essential for sustained energy.</div>
+          </div>
+        </div>
+        <div class="compare-row">
+          <div class="metric">Needs more protein</div>
+          <div class="compare-grid">
+            <div class="compare-cell"><b>Football ✓</b>Frequent collisions, sprinting, and strength-based movements mean more muscle repair is needed after games.</div>
+            <div class="compare-cell"><b>Lacrosse</b>Still needs solid protein since it's a contact sport — just not as much as football.</div>
+          </div>
+        </div>
+        <div class="compare-row">
+          <div class="metric">Intensity & game length</div>
+          <div class="compare-grid">
+            <div class="compare-cell"><b>Football</b>Short, explosive plays. Priority is starting with full glycogen stores, then protein after the game.</div>
+            <div class="compare-cell"><b>Lacrosse</b>Longer, continuous play calls for higher carb intake throughout the day.</div>
+          </div>
+        </div>
+      </div>
+      <div class="compare-summary">
+        <b>The key game-day difference</b>
+        Football meals lean into bigger pre-game meals and heavier post-game protein because of physical contact. Lacrosse meals lean into lighter, more frequent carbs to support endurance and speed — while still getting enough protein since it's a contact sport too.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEAL PLAN ================= -->
+<section class="section section-alt" id="mealplan">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>A full game-day plan (football example)</h2>
+      <p>Built from the patterns above, here's what a full game day of eating can look like for a football player. Use it as a template and adjust the foods and portions for your own sport.</p>
+    </div>
+
+    <div class="timeline" id="timeline">
+
+      <div class="t-item">
+        <div class="t-rail"><div class="t-num">1</div><div class="t-line"></div></div>
+        <div class="t-body">
+          <div class="t-head">
+            <h3>Breakfast</h3>
+            <span class="t-when">Morning of the game</span>
+          </div>
+          <div class="t-foods">
+            <span>Scrambled eggs</span><span>Oatmeal with banana &amp; honey</span><span>Whole-grain toast</span><span>Water or electrolyte drink</span>
+          </div>
+          <div class="t-why">
+            <div class="t-why-inner">
+              <p>Oatmeal and banana provide slow-digesting carbs to fuel long, high-intensity effort and keep blood sugar steady.</p>
+              <p>Eggs bring high-quality protein to support muscle function and limit breakdown.</p>
+              <p>Whole grains give sustained energy without a crash.</p>
+              <p>Starting hydration early helps prevent cramping and fatigue later.</p>
+            </div>
+          </div>
+          <button class="t-toggle" data-toggle>Why this works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-rail"><div class="t-num">2</div><div class="t-line"></div></div>
+        <div class="t-body">
+          <div class="t-head">
+            <h3>Pre-Game Meal</h3>
+            <span class="t-when">A few hours before kickoff</span>
+          </div>
+          <div class="t-foods">
+            <span>Grilled chicken breast</span><span>White rice or pasta</span><span>Vegetables</span><span>Water or sports drink (no added sugar)</span>
+          </div>
+          <div class="t-why">
+            <div class="t-why-inner">
+              <p>White rice and pasta digest quickly and top off muscle glycogen needed for sprinting and contact.</p>
+              <p>Protein here supports muscle strength going into the game.</p>
+              <p>Low fiber and fat keep things light on the stomach.</p>
+            </div>
+          </div>
+          <button class="t-toggle" data-toggle>Why this works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-rail"><div class="t-num">3</div><div class="t-line"></div></div>
+        <div class="t-body">
+          <div class="t-head">
+            <h3>Pre-Game Snack</h3>
+            <span class="t-when">Right before kickoff</span>
+          </div>
+          <div class="t-foods">
+            <span>Banana</span><span>Granola bar or rice cakes</span><span>Sports drink</span>
+          </div>
+          <div class="t-why">
+            <div class="t-why-inner">
+              <p>Carbs here provide a quick shot of energy right before you take the field.</p>
+              <p>Low fiber keeps digestion easy this close to game time.</p>
+              <p>Electrolytes help maintain hydration.</p>
+            </div>
+          </div>
+          <button class="t-toggle" data-toggle>Why this works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-rail"><div class="t-num">4</div></div>
+        <div class="t-body">
+          <div class="t-head">
+            <h3>Post-Game Recovery</h3>
+            <span class="t-when">Within about 60 minutes after</span>
+          </div>
+          <div class="t-foods">
+            <span>Steak or chicken</span><span>Sweet potatoes or rice</span><span>Fruit or berries</span><span>Whole milk or a protein shake</span>
+          </div>
+          <div class="t-why">
+            <div class="t-why-inner">
+              <p>Protein repairs the muscle damage from contact and lifting.</p>
+              <p>Carbs restore the glycogen you burned through during the game.</p>
+              <p>Antioxidants from fruit help reduce inflammation.</p>
+            </div>
+          </div>
+          <button class="t-toggle" data-toggle>Why this works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= GOLDEN RULES ================= -->
+<section class="section" id="rules">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Rules that apply no matter your sport</h2>
+      <p>Regardless of which sport athletes played, the same three priorities kept coming up for game day.</p>
+    </div>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7v8l10-12h-7V2z"/></svg></div>
+        <h4>Carbs for energy</h4>
+        <p>The go-to fuel source across every sport, especially the day of a game.</p>
+      </div>
+      <div class="rule-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l-1 8H7L6 3zM7 11l-2 10h14l-2-10"/></svg></div>
+        <h4>Lean protein for recovery</h4>
+        <p>Supports muscle repair and keeps you ready for the next practice or game.</p>
+      </div>
+      <div class="rule-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M12 22v-6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/></svg></div>
+        <h4>Low fat & fiber before games</h4>
+        <p>Keeps digestion easy so you don't feel heavy or bloated once you're competing.</p>
+      </div>
+      <div class="rule-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 4.5v9L12 22l-9-4.5v-9L12 2z"/></svg></div>
+        <h4>Consistency</h4>
+        <p>Eating the way you know works for you, meal after meal, game after game.</p>
+      </div>
+    </div>
+    <div class="avoid-strip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9L2.5 17a2 2 0 001.7 3h15.6a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
+      <p><b>What to skip on game day:</b> greasy or fried foods, excessive sugar, and anything you haven't eaten before. Trying something new right before a game is the fastest way to feel off — save the experiments for practice days.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEXT STEPS ================= -->
+<section class="section section-alt" id="next">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Your next steps</h2>
+      <p>Sports nutrition isn't one-size-fits-all. Athletes adjust what they eat based on the intensity, length, and demands of their sport — and whether they're in season or off. Here's where to start.</p>
+    </div>
+    <div class="checklist">
+      <div class="check-item">
+        <div class="num">1</div>
+        <div><h4>Talk to your team's nutritionist or strength coach</h4><p>They know your sport, your schedule, and can help you build a plan specific to you.</p></div>
+      </div>
+      <div class="check-item">
+        <div class="num">2</div>
+        <div><h4>Don't experiment with new foods on game day</h4><p>Test new meals and snacks during practice, not competition.</p></div>
+      </div>
+      <div class="check-item">
+        <div class="num">3</div>
+        <div><h4>Tailor your macros to your sport's demands</h4><p>Endurance-heavy sports lean on carbs; contact-heavy sports lean on protein. Use the sport cards above as a starting point.</p></div>
+      </div>
+      <div class="check-item">
+        <div class="num">4</div>
+        <div><h4>Prioritize carbs, protein, and hydration all year</h4><p>The balance shifts between seasons, but these three stay central to performance and long-term health.</p></div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg>
+      <p><b>Not medical advice.</b> This guide reflects the personal habits and opinions of the four varsity athletes I interviewed, not clinical recommendations. Talk to your school's athletic trainer, a registered dietitian, or your doctor before making major changes to your diet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DIVIDER: MICRO → MACRO ================= -->
+<div class="divider-band" id="business-of-sport">
+  <div class="wrap">
+    <div class="tiny">Part Two of This Project</div>
+    <h2>From the individual athlete to the global stage</h2>
+    <p>Nutrition shows what happens inside a single athlete's body. Zooming out, the Olympics show how sport reshapes entire cities, industries, and economies.</p>
+    <div class="scale-row">
+      <div class="scale-item"><b>Micro</b><span>Athlete nutrition &amp; performance</span></div>
+      <div class="scale-arrow">→</div>
+      <div class="scale-item"><b>Macro</b><span>Olympic host-city economics</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= OLYMPICS & ECONOMICS ================= -->
+<section class="section" id="the-business-of-sport">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The economics of hosting the Olympics</h2>
+      <p>Sport isn't just what happens on the field. It's also a massive economic force. This section is adapted from a paper I researched and presented through The Hun School Honors Program on what it actually costs, and gains, a city to host the Olympic Games.</p>
+    </div>
+
+    <div class="econ-stats">
+      <div class="econ-stat"><b>$2.6T+</b><span>Generated by the global sports economy each year</span></div>
+      <div class="econ-stat"><b>28M</b><span>Viewers of the Summer Olympics opening ceremony</span></div>
+      <div class="econ-stat"><b>16M</b><span>Viewers of the Winter Olympics opening ceremony</span></div>
+      <div class="econ-stat"><b>+72%</b><span>Average amount host-city budgets are exceeded by</span></div>
+    </div>
+
+    <div class="split cost-split">
+      <div class="split-card rev">
+        <h3>Where the revenue comes from</h3>
+        <span class="goal">Per Olympics.com</span>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Broadcast/TV fees — the largest single source, though roughly half goes to the IOC</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Ticketing and sponsorships</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Tourism and licensing (use of the Olympic symbol for merchandise)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Advertising and direct IOC contributions</li>
+        </ul>
+      </div>
+      <div class="split-card cost">
+        <h3>What it actually costs</h3>
+        <span class="goal">Costs adjusted for inflation have tripled since 1960 (Oxford, 2024)</span>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Bidding: $50–100M, with no guarantee of winning — Tokyo spent $150M on a failed 2016 bid, then $75M more to win 2020</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Building: venues, the Olympic Village, and infrastructure like airports, roads, and rail — the IOC requires at least 40,000 hotel rooms</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Security: Tokyo spent $2.8B in 2020 alone, a cost that's grown as the Games have become a target for threats</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;">
+      <h3 style="font-size:20px;margin-bottom:6px;">Case studies: who gained, who didn't</h3>
+      <p style="font-size:14.5px;color:var(--slate);max-width:620px;">Whether a host city comes out ahead often comes down to one thing: how much new infrastructure it had to build.</p>
+      <div class="case-grid">
+        <div class="case-card">
+          <span class="outcome profit">Turned a profit</span>
+          <h4>Los Angeles, 1984</h4>
+          <p>Already had the roads, airports, and hotel space it needed — no new stadiums required. That success is a key reason LA was chosen again to host in 2028.</p>
+        </div>
+        <div class="case-card">
+          <span class="outcome over">Massively over budget</span>
+          <h4>Sochi, 2014</h4>
+          <p>Built 11 new venues plus roads, railways, water, and energy infrastructure — the most expensive Olympics in history. Debt and maintenance are projected at $4.4B a year, which would require 4 million extra tourists annually to offset. Many of the new ski resorts sit underused, and poorly planned construction has left lasting flooding and landslide issues.</p>
+        </div>
+        <div class="case-card">
+          <span class="outcome mixed">Broadcast revenue, deep cost gap</span>
+          <h4>Tokyo, 2020</h4>
+          <p>Earned $5.8B in broadcast revenue against roughly $13B in total costs — a reminder that even a strong broadcast deal covers only a fraction of what hosting costs.</p>
+        </div>
+        <div class="case-card">
+          <span class="outcome over">Cost dwarfed revenue</span>
+          <h4>Beijing, 2022</h4>
+          <p>Broadcast revenue reached $3.6B, against an estimated $40B in total costs.</p>
+        </div>
+        <div class="case-card">
+          <span class="outcome over">Debt outlived the Games</span>
+          <h4>Montreal, 1976</h4>
+          <p>Its Olympic stadium is rarely used today and is now on its third roof renovation, projected to cost $780M — decades after the closing ceremony.</p>
+        </div>
+        <div class="case-card">
+          <span class="outcome mixed">Jobs didn't materialize</span>
+          <h4>Salt Lake City, 2002</h4>
+          <p>Predicted 70,000 new jobs; only about 7,000 materialized — roughly 10% of the projection — and those jobs were temporary.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="revenue-compare">
+      <h3 style="font-size:20px;margin-bottom:16px;">Broadcast revenue vs. total cost</h3>
+      <div class="rc-city">
+        <div class="rc-label"><span>Tokyo 2020</span></div>
+        <div class="rc-bars">
+          <div class="rc-bar-row"><span class="rc-name">Revenue</span><div class="rc-bar-track"><div class="rc-bar-fill" style="width:45%;background:var(--revenue);">$5.8B</div></div></div>
+          <div class="rc-bar-row"><span class="rc-name">Total cost</span><div class="rc-bar-track"><div class="rc-bar-fill" style="width:100%;background:var(--cost);">$13B</div></div></div>
+        </div>
+      </div>
+      <div class="rc-city">
+        <div class="rc-label"><span>Beijing 2022</span></div>
+        <div class="rc-bars">
+          <div class="rc-bar-row"><span class="rc-name">Revenue</span><div class="rc-bar-track"><div class="rc-bar-fill" style="width:9%;background:var(--revenue);">$3.6B</div></div></div>
+          <div class="rc-bar-row"><span class="rc-name">Total cost</span><div class="rc-bar-track"><div class="rc-bar-fill" style="width:100%;background:var(--cost);">$40B</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reform-callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg>
+      <p><b>The IOC is reforming how it picks hosts.</b> Economists Stefan Billings and Scott Holladay found no long-term impact on a host country's real GDP per capita from hosting the Games. In response to concerns like this, the IOC launched Olympic Agenda 2020, which now weighs how a bid aligns with a city's existing long-term social and economic plans — rather than rewarding the most elaborate proposal. Whether the reforms work is still an open question, but it's a step in the right direction.</p>
+    </div>
+
+    <div class="learned-box">
+      <div class="tiny">What I Learned</div>
+      <p>Hosting the Olympics isn't automatically good or bad for a city — it depends almost entirely on what a city already has. Cities with existing infrastructure, like Los Angeles, can host profitably and use the Games to showcase national identity and progress on a global stage. Cities that have to build from scratch, like Sochi, often take on debt and maintenance costs that outlast the two weeks of competition by decades.</p>
+      <p>These reforms don't guarantee success, but they mark a real shift in how the IOC — and future host cities — should think about the trade-off between national pride and long-term economic responsibility.</p>
+      <div class="author">— Will Bednar, varsity football and lacrosse, The Hun School of Princeton</div>
+    </div>
+
+    <div class="sources-list">
+      <h4>Sources for this section</h4>
+      <ul>
+        <li>Olympics.com, on where Olympic revenue comes from and how it is distributed</li>
+        <li>University of Oxford, Saïd Business School, 2024 study on Olympic cost overruns</li>
+        <li>Billings and Holladay, on the long-term effect of hosting on real GDP per capita</li>
+        <li>Olympic Agenda 2020, International Olympic Committee</li>
+        <li>Full citations are in the <a href="REPLACE_WITH_GOOGLE_DOC_LINK_OLYMPICS" target="_blank" rel="noopener">original paper</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECT LOG ================= -->
+<section class="section section-alt" id="log">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How this project happened</h2>
+      <p>Roughly in order. It took about a year, and it isn't finished.</p>
+    </div>
+    <div class="log">
+      <!-- TODO (Rishi/Aaron): confirm these dates with Will before publishing. -->
+      <div class="log-item"><span class="log-when">Fall 2025</span><span class="log-what">Diagnosed mid-football season. Rebuilt my own diet with a registered dietitian and started reading sports nutrition research instead of taking teammates' word for it.</span></div>
+      <div class="log-item"><span class="log-when">Winter 2025–26</span><span class="log-what">Wrote the five interview questions. Interviewed a lacrosse, football, baseball, and basketball player, recorded the audio, and transcribed it.</span></div>
+      <div class="log-item"><span class="log-when">Spring 2026</span><span class="log-what">Checked the interviews against the dietitian and Hun's athletic trainers. Wrote the evidence-based meal and supplement guide my teammates now use. Presented the Olympics economics paper through the Honors Program.</span></div>
+      <div class="log-item"><span class="log-when">Summer 2026</span><span class="log-what">Turned the guide into this site so it's easier to share than a Google Doc.</span></div>
+      <div class="log-item"><span class="log-when">Fall 2026</span><span class="log-what">Two freshman ambassadors are adding new interviews so the project keeps going after I graduate.</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <span class="brand-mark" style="background:var(--cinder);"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z" fill="#fff"/></svg></span>
+      Fuel Up
+    </div>
+    <p>Two projects, one theme: sport from the individual athlete out to the global economy. Interviews, meal plan, and Olympics research by Will Bednar, The Hun School of Princeton, Class of 2027.</p>
+    <p style="margin-top:10px;">Questions, corrections, or want to be interviewed? Email <a href="mailto:willbednar@hunschool.org">willbednar@hunschool.org</a>.</p>
+    <p style="margin-top:10px;font-size:12px;color:var(--slate-light);">Last updated September 2026.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const drawer = document.getElementById('mobileDrawer');
+  menuBtn.addEventListener('click', () => {
+    const open = drawer.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Sport tabs
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.sport-panel');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.setAttribute('aria-selected', 'false'));
+      btn.setAttribute('aria-selected', 'true');
+      const sport = btn.dataset.sport;
+      panels.forEach(p => p.classList.toggle('active', p.dataset.panel === sport));
+    });
+  });
+
+  // Meal plan accordion
+  document.querySelectorAll('[data-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const why = btn.previousElementSibling;
+      const isOpen = why.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+    });
+  });
+  // open the first timeline item by default
+  const firstWhy = document.querySelector('#timeline .t-why');
+  const firstToggle = document.querySelector('#timeline [data-toggle]');
+  if (firstWhy && firstToggle) { firstWhy.classList.add('open'); firstToggle.classList.add('open'); }
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('nav.links a');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
